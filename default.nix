@@ -1,6 +1,11 @@
 # Example usage:
 # let
-# kubeconfig = (import ./kubeconfig.nix { inherit pkgs; });
+#  kubeconfig = (import (pkgs.fetchFromGitHub {
+#    owner = "szamuboy";
+#    repo = "kubeconfig-nix";
+#    rev = "c286b7b86ad3a78583a63ab58049b281d2a7ff70";
+#    sha256 = "sha256-aczuBQuPJCmXH8m+UBKZcIgdbswPjT8FH6D2eMjCGAI=";
+#  }) { inherit pkgs; });
 # in pkgs.mkShell {
 #  KUBECONFIG = toString (kubeconfig.kubeconfig [{
 #    name = "whatever-context-name";
